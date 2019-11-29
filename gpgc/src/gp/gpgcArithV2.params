@@ -1,0 +1,73 @@
+parent.0 = koza.params
+pop.subpop.0.species.fitness = ec.simple.SimpleFitness
+
+stat.num-children = 1
+stat.child.0 = gp.MyStatistics
+
+# We have one function set, of class GPFunctionSet
+gp.fs.size = 1
+gp.fs.0 = ec.gp.GPFunctionSet
+# We'll call the function set "f0".
+gp.fs.0.name = f0
+
+##TERMS
+gp.fs.0.size = 16
+gp.fs.0.func.0 = gp.locum.LocumAddFeatureNode
+gp.fs.0.func.0.nc = nc0
+gp.fs.0.func.10 = gp.locum.LocumSubFeatureNode
+gp.fs.0.func.10.nc = nc0
+gp.fs.0.func.11 = gp.locum.LocumMulFeatureNode
+gp.fs.0.func.11.nc = nc0
+gp.fs.0.func.12 = gp.locum.LocumDivFeatureNode
+gp.fs.0.func.12.nc = nc0
+gp.fs.0.func.13 = gp.DoubleConstantNode
+gp.fs.0.func.13.nc = nc0
+gp.fs.0.func.14 = gp.locum.LocumMaxFeatureNode
+gp.fs.0.func.14.nc = nc0
+gp.fs.0.func.15 = gp.locum.LocumMinFeatureNode
+gp.fs.0.func.15.nc = nc0
+
+##FUNCTIONS
+gp.fs.0.func.2 = gp.Add
+gp.fs.0.func.2.nc = nc2
+gp.fs.0.func.3 = gp.Sub
+gp.fs.0.func.3.nc = nc2
+gp.fs.0.func.4 = gp.Mul
+gp.fs.0.func.4.nc = nc2
+gp.fs.0.func.5 = gp.Div
+gp.fs.0.func.5.nc = nc2
+gp.fs.0.func.6 = gp.AbsAdd
+gp.fs.0.func.6.nc = nc2
+gp.fs.0.func.9 = gp.AbsSub
+gp.fs.0.func.9.nc = nc2
+gp.fs.0.func.8 = gp.Max
+gp.fs.0.func.8.nc = nc2
+gp.fs.0.func.1 = gp.Min
+gp.fs.0.func.1.nc = nc2
+gp.fs.0.func.7 = gp.If
+gp.fs.0.func.7.nc = nc3
+eval.problem = gp.locum.LocumClusteringProblem
+eval.problem.data = gp.DoubleData
+
+evalthreads = 6
+generations = 100
+pop.subpop.0.size = 1024
+#breedthreads = 8
+
+pop.subpop.0.species.pipe.num-sources = 2
+pop.subpop.0.species.pipe.source.0 = ec.gp.koza.CrossoverPipeline
+pop.subpop.0.species.pipe.source.0.prob = 0.80
+#pop.subpop.0.species.pipe.source.2 = ec.breed.ReproductionPipeline
+#pop.subpop.0.species.pipe.source.2.prob = 0.01
+pop.subpop.0.species.pipe.source.1 = ec.gp.koza.MutationPipeline
+pop.subpop.0.species.pipe.source.1.prob = 0.20
+
+breed.elite.0 = 10
+
+
+gp.koza.xover.maxdepth = 7
+gp.koza.mutate.maxdepth = 7
+gp.koza.grow.min-depth = 2
+gp.koza.grow.max-depth = 7
+gp.koza.half.min-depth = 2
+gp.koza.half.max-depth = 7

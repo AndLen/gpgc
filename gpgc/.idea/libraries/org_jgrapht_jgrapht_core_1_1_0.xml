@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="org.jgrapht:jgrapht-core:1.1.0" type="repository">
+    <properties maven-id="org.jgrapht:jgrapht-core:1.1.0" />
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/org/jgrapht/jgrapht-core/1.1.0/jgrapht-core-1.1.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.ideaLibSources/jgrapht-core-1.1.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

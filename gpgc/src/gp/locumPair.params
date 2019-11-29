@@ -1,0 +1,130 @@
+parent.0 = koza.params
+pop.subpop.0.species.fitness = ec.simple.SimpleFitness
+
+stat.num-children = 1
+stat.child.0 = gp.MyStatistics
+
+#Typing, booo
+gp.type.a.size = 2
+
+gp.type.a.0.name = double
+gp.type.a.1.name = pairDouble
+
+gp.tc.size = 1
+gp.tc.0 = ec.gp.GPTreeConstraints
+gp.tc.0.name = tc0
+gp.tc.0.fset = f0
+gp.tc.0.returns = double
+
+
+
+gp.nc.size = 5
+
+gp.nc.0 = ec.gp.GPNodeConstraints
+gp.nc.0.name = ncPairDouble
+gp.nc.0.returns = pairDouble
+gp.nc.0.size = 0
+
+gp.nc.1 = ec.gp.GPNodeConstraints
+gp.nc.1.name = ncArith
+gp.nc.1.returns = double
+gp.nc.1.size = 2
+gp.nc.1.child.0 = double
+gp.nc.1.child.1 = double
+
+gp.nc.2 = ec.gp.GPNodeConstraints
+gp.nc.2.name = ncUnaryArith
+gp.nc.2.returns = double
+gp.nc.2.size = 1
+gp.nc.2.child.0 = pairDouble
+
+gp.nc.3 = ec.gp.GPNodeConstraints
+gp.nc.3.name = ncIf
+gp.nc.3.returns = double
+gp.nc.3.size = 3
+gp.nc.3.child.0 = double
+gp.nc.3.child.1 = double
+gp.nc.3.child.2 = double
+
+gp.nc.4 = ec.gp.GPNodeConstraints
+gp.nc.4.name = ncDouble
+gp.nc.4.returns = double
+gp.nc.4.size = 0
+
+# We have one function set, of class GPFunctionSet
+gp.fs.size = 1
+gp.fs.0 = ec.gp.GPFunctionSet
+# We'll call the function set "f0".
+gp.fs.0.name = f0
+
+# We have five functions in the function set.  They are:
+gp.fs.0.size = 19
+#gp.fs.0.func.0 = gp.locum.LocumFeatureNode
+#gp.fs.0.func.0.nc = ncDouble
+gp.fs.0.func.18 = gp.DoubleConstantNode
+gp.fs.0.func.18.nc = ncDouble
+gp.fs.0.func.2 = gp.Add
+gp.fs.0.func.2.nc = ncArith
+gp.fs.0.func.3 = gp.Sub
+gp.fs.0.func.3.nc = ncArith
+gp.fs.0.func.4 = gp.Mul
+gp.fs.0.func.4.nc = ncArith
+gp.fs.0.func.5 = gp.Div
+gp.fs.0.func.5.nc = ncArith
+gp.fs.0.func.6 = gp.AbsAdd
+gp.fs.0.func.6.nc = ncArith
+gp.fs.0.func.9 = gp.AbsSub
+gp.fs.0.func.9.nc = ncArith
+gp.fs.0.func.8 = gp.Max
+gp.fs.0.func.8.nc = ncArith
+gp.fs.0.func.1 = gp.Min
+gp.fs.0.func.1.nc = ncArith
+gp.fs.0.func.7 = gp.If
+gp.fs.0.func.7.nc = ncIf
+
+##unary
+gp.fs.0.func.11 = gp.locum.Add
+gp.fs.0.func.11.nc = ncUnaryArith
+gp.fs.0.func.12 = gp.locum.Sub
+gp.fs.0.func.12.nc = ncUnaryArith
+gp.fs.0.func.13 = gp.locum.Mul
+gp.fs.0.func.13.nc = ncUnaryArith
+gp.fs.0.func.14 = gp.locum.Div
+gp.fs.0.func.14.nc = ncUnaryArith
+gp.fs.0.func.15 = gp.locum.AbsAdd
+gp.fs.0.func.15.nc = ncUnaryArith
+gp.fs.0.func.16 = gp.locum.AbsSub
+gp.fs.0.func.16.nc = ncUnaryArith
+gp.fs.0.func.17 = gp.locum.Max
+gp.fs.0.func.17.nc = ncUnaryArith
+gp.fs.0.func.10 = gp.locum.Min
+gp.fs.0.func.10.nc = ncUnaryArith
+
+gp.fs.0.func.0 = gp.locum.LocumSameFeatureNode
+gp.fs.0.func.0.nc = ncPairDouble
+
+eval.problem = gp.locum.LocumClusteringProblem
+eval.problem.data = gp.DoubleData
+
+evalthreads = 6
+generations = 100
+pop.subpop.0.size = 1024
+#breedthreads = 8
+
+pop.subpop.0.species.pipe.num-sources = 2
+pop.subpop.0.species.pipe.source.0 = ec.gp.koza.CrossoverPipeline
+pop.subpop.0.species.pipe.source.0.prob = 0.80
+#pop.subpop.0.species.pipe.source.2 = ec.breed.ReproductionPipeline
+#pop.subpop.0.species.pipe.source.2.prob = 0.01
+pop.subpop.0.species.pipe.source.1 = ec.gp.koza.MutationPipeline
+pop.subpop.0.species.pipe.source.1.prob = 0.20
+
+breed.elite.0 = 10
+
+
+gp.koza.xover.maxdepth = 6
+gp.koza.mutate.maxdepth = 6
+gp.koza.grow.min-depth = 2
+gp.koza.grow.max-depth = 6
+gp.koza.half.min-depth = 2
+gp.koza.half.max-depth = 6

@@ -1,0 +1,113 @@
+parent.0 = koza.params
+
+pop.default-subpop = 0
+
+pop.subpops= 1
+
+pop.subpop.0.species.fitness = ec.simple.SimpleFitness
+
+stat.num-children = 1
+stat.child.0 = featureCreate.gp.FeatureCreatorStatistics
+
+# We have one function set, of class GPFunctionSet
+gp.fs.size = 1
+gp.fs.0 = ec.gp.GPFunctionSet
+# We'll call the function set "f0".
+gp.fs.0.name = f0
+
+# We have five functions in the function set.  They are:
+gp.fs.0.size = 16
+gp.fs.0.func.0 = gp.MultiXNode
+gp.fs.0.func.0.nc = nc0
+gp.fs.0.func.1 = gp.Add
+gp.fs.0.func.1.nc = nc2
+
+gp.fs.0.func.2 = gp.Mul
+gp.fs.0.func.2.nc = nc2
+
+gp.fs.0.func.3 = gp.Max
+gp.fs.0.func.3.nc = nc2
+gp.fs.0.func.4 = gp.Min
+gp.fs.0.func.4.nc = nc2
+gp.fs.0.func.5 = gp.Sin
+gp.fs.0.func.5.nc = nc1
+
+gp.fs.0.func.6 = gp.Tanh
+gp.fs.0.func.6.nc = nc1
+gp.fs.0.func.7 = gp.If
+gp.fs.0.func.7.nc = nc3
+
+gp.fs.0.func.8 = gp.Log
+gp.fs.0.func.8.nc = nc1
+
+gp.fs.0.func.9 = gp.Tan
+gp.fs.0.func.9.nc = nc1
+
+gp.fs.0.func.10 = gp.Exp
+gp.fs.0.func.10.nc = nc1
+
+gp.fs.0.func.11 = gp.Sqrt
+gp.fs.0.func.11.nc = nc1
+
+gp.fs.0.func.12 = gp.Square
+gp.fs.0.func.12.nc = nc1
+
+gp.fs.0.func.13 = gp.Cube
+gp.fs.0.func.13.nc = nc1
+
+
+gp.fs.0.func.14 = gp.Neg
+gp.fs.0.func.14.nc = nc1
+
+
+gp.fs.0.func.15 = gp.Pow
+gp.fs.0.func.15.nc = nc2
+
+
+#gp.fs.0.func.4 = gp.Div
+#gp.fs.0.func.4.nc = nc2
+#gp.fs.0.func.2 = gp.Sub
+#gp.fs.0.func.2.nc = nc2
+
+#gp.fs.0.func.16 = gp.DoubleConstantNode
+#gp.fs.0.func.16.nc = nc0
+eval.problem = featureCreate.gp.MTFCMultivariateProblem
+eval.problem.data = gp.DoubleData
+
+evalthreads = 6
+generations = 200
+pop.subpop.0.size = 1024
+
+pop.subpop.0.species.pipe.num-sources = 2
+pop.subpop.0.species.pipe.source.0 = ec.gp.koza.CrossoverPipeline
+pop.subpop.0.species.pipe.source.0.prob = 0.60
+pop.subpop.0.species.pipe.source.1 = ec.gp.koza.MutationPipeline
+pop.subpop.0.species.pipe.source.1.prob = 0.40
+
+breed.elite.0 = 10
+
+
+gp.koza.xover.maxdepth = 15
+#gp.koza.xover.maxsize = 15
+gp.koza.mutate.maxdepth = 15
+#gp.koza.full.max-depth = 15
+gp.koza.grow.min-depth = 2
+gp.koza.grow.max-depth = 15
+gp.koza.half.min-depth = 2
+gp.koza.half.max-depth = 15
+
+pop.subpop.0.species.ind.numtrees = 5
+pop.subpop.0.species.ind.tree.0 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.0.tc = tc0
+
+pop.subpop.0.species.ind.tree.1 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.1.tc = tc0
+
+pop.subpop.0.species.ind.tree.2 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.2.tc = tc0
+
+pop.subpop.0.species.ind.tree.3 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.3.tc = tc0
+
+pop.subpop.0.species.ind.tree.4 = ec.gp.GPTree
+pop.subpop.0.species.ind.tree.4.tc = tc0

@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="weka-3-9-1">
+    <CLASSES>
+      <root url="file://$USER_HOME$/weka-3-9-1" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="file://$USER_HOME$/weka-3-9-1/doc" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="file://$USER_HOME$/weka-3-9-1" />
+      <root url="jar://$USER_HOME$/weka-3-9-1/weka-src.jar!/src/main/java" />
+      <root url="jar://$USER_HOME$/weka-3-9-1/weka-src.jar!/src/test/java" />
+    </SOURCES>
+    <jarDirectory url="file://$USER_HOME$/weka-3-9-1" recursive="false" />
+    <jarDirectory url="file://$USER_HOME$/weka-3-9-1" recursive="false" type="SOURCES" />
+  </library>
+</component>

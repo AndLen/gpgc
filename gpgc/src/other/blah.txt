@@ -1,0 +1,19 @@
+ARCENE_TEST.DATA with clusterFitness.J1ScatterFitness:
+Final Results: Centroid PSO FF average: 0.198, K-Means Seeded Centroid FF average: 0.202, Dataset Seeded Centroid FF average: 0.204, Medoid PSO FF average: 0.217, K-Means FF average:     0,
+
++-----------------------+---------+-------+-------+-------+-------------+-------+-------+
+|Method                 |Scatter ^|   J1 ^|   J2 ^| Dunn ^|Total Intra v|   DB v| RMSE v|
++-----------------------+---------+-------+-------+-------+-------------+-------+-------+
+|Centroid PSO           |    0.391|  0.198|  4.762|  0.459|    1.010e+04|  1.425| 14.896|
+|K-Means Seeded Centroid|    0.392|  0.202|  4.851|  0.460|    1.012e+04|  1.430| 14.895|
+|Dataset Seeded Centroid|    0.395|  0.204|  4.907|  0.460|    1.008e+04|  1.413| 14.875|
+|Medoid PSO             |    0.395|  0.217|  5.205|  0.460|    1.008e+04|  1.414| 14.875|
+|K-Means                |    0.377|      0|      0|  0.460|    1.027e+04|  1.489| 14.975|
++-----------------------+---------+-------+-------+-------+-------------+-------+-------+
+
+Centroid PSO selected 4930.43 features on average. FS histogram:
+K-Means Seeded Centroid selected 4837.97 features on average. FS histogram:
+Dataset Seeded Centroid selected 4826.60 features on average. FS histogram:
+Medoid PSO selected 4513.17 features on average. FS histogram:
+K-Means selected 10000.00 features on average. FS histogram:
+
